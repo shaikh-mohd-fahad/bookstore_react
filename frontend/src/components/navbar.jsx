@@ -1,6 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Login from './Login';
 
 function Navbar() {
+
+const [theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
+const element=document.documentElement;
+useEffect(()=>{
+  if(theme==="dark"){
+    element.classList.add("dark");
+  localStorage.setItem("theme","dark");
+  document.body.classList.add("dark");
+  }
+  else{
+    element.classList.remove("dark");
+  localStorage.setItem("theme","light");
+  document.body.classList.remove("dark");
+  }
+});
   const navb=(
     <>
     
@@ -44,9 +60,10 @@ function Navbar() {
       </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn" onClick={()=>{document.getElementById("login_modal").showModal()}}>Login</a>
   </div>
         </div>
+        <Login/>
     </>
   )
 }
