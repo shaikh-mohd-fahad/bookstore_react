@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login';
-
+import logo from "../../public/logo.png";
 function Navbar() {
 
 const [theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
@@ -29,7 +29,7 @@ useEffect(()=>{
   );
   return (
     <>
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-pink-200">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,7 +52,7 @@ useEffect(()=>{
           {navb}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl"><img src={logo}  className="h-[50px]"/></a>
   </div>
   <div className="navbar-center hidden lg:flex">
   <ul className="menu menu-horizontal px-1">

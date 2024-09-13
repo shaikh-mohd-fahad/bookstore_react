@@ -6,8 +6,8 @@ function Banner() {
     <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row">
         <div  className='w-full md:order-1 order-2 md:w-1/2 mt-12  md:mt-20'>
           <div className='space-y-6 md:space-y-8 '>
-          <h1 className='font-bold text-4xl'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <h1 className='font-bold text-4xl text-pink-300'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+            <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
             <label className="input input-bordered flex items-center gap-2">
   <svg
@@ -22,12 +22,13 @@ function Banner() {
   </svg>
   <input type="text" className="grow" placeholder="Email" />
 </label>
-<button className="btn btn-secondary">Secondary</button>
+<button className="btn bg-pink-200">Secondary</button>
           </div>
           
         </div>
         <div className='w-full md:w-1/2 order-1 flex text-center justify-center align-middle'>
             <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149331952.jpg?t=st=1725735214~exp=1725738814~hmac=c3ec252b8343e373d31bbf413a976b4185277c7c39428dc369afd0fba96049e0&w=826" className='w-[500px] h-[500px]'/>
+            {/* <img src="https://img.freepik.com/free-vector/hand-drawn-back-school-background_23-2148220123.jpg?t=st=1726164719~exp=1726168319~hmac=a5c3b07c755eb0bba512179b4f72f7e4f31ad4aacaa9e101068d7798293df197&w=740" className='w-[500px] h-[500px] mt-5'/> */}
         </div>
     </div>
     </>
