@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login';
 import logo from "../../public/logo.png";
-function Navbar() {
+import Logout from './Logout';
+import { useAuth } from '../context/AuthProvider';
 
+function Navbar() {
+  const [authUser,SetAuthUser]=useAuth();
 const [theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
 const element=document.documentElement;
 useEffect(()=>{
@@ -59,9 +62,14 @@ useEffect(()=>{
           {navb}
       </ul>
   </div>
-  <div className="navbar-end">
+  {
+    authUser?(<div className="navbar-end"><Logout/></div>):
+    (
+      <div className="navbar-end">
     <a className="btn" onClick={()=>{document.getElementById("login_modal").showModal()}}>Login</a>
-  </div>
+      </div>
+    )
+  }
         </div>
         <Login/>
     </>

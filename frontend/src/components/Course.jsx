@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import Cards from './Cards';
-import list from "../../public/list.json";
 import {Link} from "react-router-dom"
+import axios from 'axios';
+import { getBook } from '../../../backend/controller/bookController';
 function Course() {
   // const filderData=list.filter((data)=>data.category==="");
+  const [book,setBook]=useState([])
+  useEffect(()=>{
+    const getBook=async()=>{
+      try {
+       const ress=await axios.get("http://localhost:3000/book")
+      //  console.log("res"+ress.data);
+       setBook(ress.data)
+      } catch (error) {
+        console.log("eror: "+error)
+      }
+    }
+    getBook();
+  },[])
   return (
     <>
     <div className="container max-w-screen-2xl mx-auto md:px-20 px-4">
@@ -16,9 +30,9 @@ function Course() {
       </div>
 
     
-    <div class="grid grid-cols-1 mt-5 md:grid-cols-4">
+    <div className="grid grid-cols-1 mt-5 md:grid-cols-4">
     {
-        list.map((item)=>{
+        book.map((item)=>{
           return(
             <Cards  key={item.id} item={item}/>
           )
